@@ -1,0 +1,96 @@
+[v-cloak] {
+    display: none;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: black;
+    margin-top: 60px;
+}
+
+#cards {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8F0FF;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-size: 25px;
+    height: 170px;
+}
+
+input[type=text] {
+    border: 0;
+    font-size: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.word {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.correctAnswer {
+    padding: 0;
+    margin: 0;
+}
+
+.correct {
+    color: #0f5132;
+    background-color: #d1e7dd;
+}
+
+#correctCount {
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#completed {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f5132;
+    padding: 10px;
+    margin: 10px;
+}
+
+.notCorrect {
+    background-color: lightpink;
+    transition: 0.2s ease;
+}
+
+.backToNormal {
+    transition: 0.2s ease;
+}
+
+.resetBtn {
+    margin-top: 20px;
+    border: none;
+    width: 150px;
+    height: 50px;
+    background-color: rgba(174, 190, 238, 0.6);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+.resetBtn:hover {
+    background-color: rgba(174, 190, 238, 0.8);
+}

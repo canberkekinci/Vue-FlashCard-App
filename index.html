@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashWord App</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src='app.js' defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <h1>FlashWord</h1>
+
+        <p v-if="!completed" id="correctCount">You have answered {{ correctCount }} out of {{ wordCount }}</p>
+        <p v-else id="completed">Congratulations! You have answered all of the cards.</p>
+
+        <div id="cards">
+            <div class="card" v-for="word in shuffledWords" :class="{ correct: word.correct }">
+                <p class="word">{{ word.word_a }}</p>
+                <input v-if="!word.correct" type="text" v-model="word.answer" @keyup.enter="checkAnswer(word)" :class="{ notCorrect: word.answeredWrong, backToNormal: !word.answeredWrong }">
+                <p v-else class="correctAnswer">{{ word.answer }}</p>
+                <p v-if="word.checked && !word.correct">Hint: {{ word.hint }}</p>
+            </div>
+        </div>
+
+        <button class="resetBtn" @click="reset()">Reset</button>
+    </div>
+</body>
+</html>
